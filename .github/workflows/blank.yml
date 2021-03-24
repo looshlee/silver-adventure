@@ -19,6 +19,7 @@ jobs:
 
     - name: Cache node modules
       uses: actions/cache@v2
+      id: mix-prod-cache
       env:
         cache-name: cache-node-modules
       with:

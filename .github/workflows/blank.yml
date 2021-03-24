@@ -29,6 +29,9 @@ jobs:
           ${{ runner.os }}-build-${{ env.cache-name }}-
           ${{ runner.os }}-build-
           ${{ runner.os }}-
+    - name: install something
+      if: steps.mix-prod-cache.outputs.cache-hit != 'true'
+      run: echo NO HIT
 
     - name: Install Dependencies
       run: npm install
